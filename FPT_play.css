@@ -1,0 +1,145 @@
+/* ========== RESET CSS ========== */
+* {
+  margin: 0; /* Bỏ khoảng cách bên ngoài mặc định của tất cả phần tử */
+  padding: 0; /* Bỏ khoảng cách bên trong mặc định */
+  box-sizing: border-box; /* Tính cả padding + border vào width/height phần tử */
+  font-family: 'Poppins', sans-serif; /* Đặt font chữ chính cho toàn bộ trang */
+}
+
+/* ========== KHUNG CHÍNH ========== */
+.container {
+  max-width: 1200px;       /* Giới hạn chiều rộng tối đa của khung */
+  margin: 0 auto;          /* Căn giữa khung ra giữa màn hình */
+  background-color: #000;  /* Nền đen */
+  color: #fff;             /* Chữ trắng mặc định */
+}
+
+/* ========== HEADER ========== */
+.header_01 {
+  display: flex;                   /* Dùng flexbox để sắp xếp các phần tử trong header */
+  justify-content: space-between;  /* Logo bên trái – menu giữa – nút bên phải */
+  align-items: center;             /* Căn giữa theo chiều dọc */
+  background-color: #000;          /* Nền đen cho header */
+  padding: 10px 20px;              /* Khoảng trống trên dưới 10px, trái phải 20px */
+}
+
+/* Logo */
+.logo img {
+  height: 40px;  /* Chiều cao logo 40px */
+  width: auto;   /* Giữ nguyên tỉ lệ ảnh */
+}
+
+/* ========== NAVIGATION ========== */
+.list_nav {
+  display: flex;           /* Nav cũng dùng flexbox */
+  align-items: center;     /* Căn giữa theo chiều dọc */
+  gap: 30px;               /* Khoảng cách giữa menu và nút */
+}
+
+/* menu ngang */
+.list {
+  list-style: none; /* Bỏ dấu chấm của <ul> */
+  display: flex;    /* Hiển thị ngang các <li> */
+  gap: 25px;        /* Khoảng cách giữa các mục menu */
+}
+
+/* Link trong menu */
+.list .item a {
+  text-decoration: none; /* Bỏ gạch chân link */
+  color: #fff;           /* Màu chữ trắng */
+  font-size: 16px;       /* Kích thước chữ */
+  padding: 6px 0;        /* Khoảng trống trên dưới */
+  transition: color 0.3s;/* Hiệu ứng đổi màu khi hover */
+}
+
+/* Khi rê chuột lên menu đổi màu cam */
+.list .item a:hover {
+  color: #ff7a00; /* Màu cam FPT */
+}
+
+/* ========== BUTTONS BÊN PHẢI ========== */
+.button {
+  display: flex;       /* Hai nút hiển thị ngang */
+  gap: 10px;           /* Khoảng cách giữa nút mua gói và đăng nhập */
+  margin-left: 30px;   /* Đẩy cách menu 30px */
+}
+
+/* Nút mua gói */
+.button .buy {
+  background-color: #ff5500; /* Nền cam */
+  color: #fff;              /* Chữ trắng */
+  border: none;             /* Không viền */
+  padding: 6px 14px;        /* Khoảng trống trong nút */
+  border-radius: 5px;       /* Bo góc nút */
+  cursor: pointer;          /* Đổi thành con trỏ tay */
+  font-size: 15px;          /* Cỡ chữ */
+}
+
+/* Nút đăng nhập */
+.button .login {
+  background: transparent;  /* Nền trong suốt */
+  color: #fff;              /* Chữ trắng */
+  border: 1px solid #fff;   /* Viền trắng */
+  padding: 6px 14px;        /* Khoảng trống */
+  border-radius: 5px;       /* Bo góc */
+  cursor: pointer;          /* Con trỏ tay */
+  font-size: 15px;          /* Cỡ chữ */
+}
+
+/* Hover nút mua gói đổi màu cam sáng */
+.button .buy:hover {
+  background-color: #ff7a00;
+}
+
+/* Hover nút đăng nhập đổi nền trắng chữ đen */
+.button .login:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ========== PHẦN MAIN ========== */
+.main {
+  padding: 20px; /* Khoảng trống xung quanh nội dung chính */
+}
+
+/* Trailer ảnh to */
+.trailer img {
+  width: 100%;         /* Ảnh trailer chiếm 100% chiều rộng */
+  border-radius: 10px; /* Bo góc ảnh */
+  margin-bottom: 20px; /* Cách phía dưới 20px */
+}
+
+/* Danh sách phim đề xuất */
+.movie_propose {
+  display: flex;          /* Hiển thị ngang */
+  flex-wrap: wrap;        /* Tự xuống hàng khi chật */
+  gap: 20px;              /* Khoảng cách giữa các phim */
+  justify-content: center;/* Căn giữa */
+}
+
+/* Mỗi phim */
+.movie_item {
+  width: 150px;           /* Rộng 150px */
+  text-align: center;     /* Căn chữ giữa */
+  background-color: #111; /* Nền xám đậm */
+  border-radius: 10px;    /* Bo góc khối */
+  overflow: hidden;       /* Ẩn phần tràn */
+  transition: transform 0.3s; /* Hiệu ứng phóng to khi hover */
+}
+
+/* Khi rê chuột lên phóng to nhẹ */
+.movie_item:hover {
+  transform: scale(1.05);
+}
+
+/* Ảnh trong phim */
+.movie_item img {
+  width: 100%; /* Ảnh đầy khối */
+  display: block; /* Bỏ khoảng trắng dưới ảnh */
+}
+
+/* Tên phim */
+.movie_item h3 {
+  font-size: 14px;      /* Cỡ chữ */
+  padding: 10px 5px;    /* Khoảng cách chữ so với viền */
+}

@@ -1,0 +1,69 @@
+/* Reset mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: bisque;
+  font-size: 20px;
+  color: #000;
+}
+
+/* Container chính */
+.main_container {
+  display: flex;                 /* phải có display để justify-content hoạt động */
+  flex-direction: column;        /* các khối con xếp dọc */
+  max-width: 1200px;             /* sửa từ 1200opx thành 1200px */
+  margin: 40px auto;             /* căn giữa container */
+  padding: 0 20px;
+}
+
+/* Tiêu đề */
+.section_list .h1 h1 {
+  text-align: center;
+  margin: 10px 30px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Danh sách menu */
+.list_items {
+  display: flex;
+  justify-content: space-between;  /* chia đều khoảng cách các item */
+  list-style: none;
+  background-color: aqua;
+  margin-bottom: 20px;             /* thêm khoảng cách dưới */
+  padding: 10px;                   /* thêm padding cho đẹp */
+}
+
+/* Các link bên trong li */
+.list_items li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+.list_items li a:hover {
+  background-color: #00ced1;       /* hiệu ứng hover */
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Lưới ảnh */
+.item_img {
+  display: grid;
+  /* Sửa cú pháp repeat(auto-fill, minmax(...)) */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 20px;
+}
+
+/* Ảnh bên trong */
+.item_img img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
