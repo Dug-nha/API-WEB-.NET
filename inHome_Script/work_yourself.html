@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <form method="post" id="the_from" action="#">
+    Username: <input type="text" name="username" id="username" placeholder="Username"> <br>
+    Password: <input type="password" name="Password" id="Password" placeholder="Password"> <br>
+    Re Password: <input type="password" name="RePassword" id="RePassword" placeholder="RePassword"> <br>
+    <input type="submit" id="button" value="Submit">    
+  </form>
+
+  <script>
+    // Đặt script sau form để DOM có sẵn
+    document.getElementById("the_from").addEventListener("submit", function(event){
+      var username = document.getElementById("username").value.trim();
+      var password = document.getElementById("Password").value.trim();
+      var repassword = document.getElementById("RePassword").value.trim();
+
+      if (username === "" || password === "" || repassword === ""){
+          alert("Vui lòng nhập đầy đủ thông tin");
+          event.preventDefault(); // Ngăn chặn gửi form
+      } else if (password !== repassword){
+          alert("Mật khẩu không khớp");
+          event.preventDefault(); // Ngăn chặn gửi form
+      } else {
+          alert("Đăng ký thành công");
+      }
+    });
+  </script>
+
+</body>
+</html>

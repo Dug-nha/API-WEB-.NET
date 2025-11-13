@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tính chỉ số BMI</h1>
+    <div>
+        <input type="number" id="weight" placeholder="Cân nặng (kg)">
+    </div>
+    <div>
+        <input type="number" id="height" placeholder="Chiều cao (cm)">
+    </div>
+    <div>
+        <button onclick="caculate()">Tính toán</button>
+    </div>
+    <div>
+        <input type="text" id="bmiResult" placeholder="Kết quả" readonly>
+    </div>
+</body>
+<script>
+    function conditionBMI(weight, height) {
+        if (weight <= 0 || height <= 0) {
+            return alert("Vui lòng nhập giá trị hợp lệ cho cân nặng và chiều cao.");
+        }
+        if(isNaN(weight) || isNaN(height)) {
+            return alert("Vui lòng nhập số hợp lệ cho cân nặng và chiều cao.");
+        }
+        else{
+            return weight / ((height / 100) * (height / 100));
+        }
+    }
+    function classifyBMI(bmi) {
+        if (typeof bmi !== "number" || isNaN(bmi)) {
+          return null;
+        }
+        else if (bmi < 18.5) {
+            return "Thiếu cân";
+        }
+         else if (bmi >= 18.5 && bmi < 24.9) {
+            return "Bình thường";
+         }
+         else if (bmi >= 25 && bmi < 29.9) {
+            return "Thừa cân";
+         }
+         else {
+            return "Béo phì";
+         }   
+    }
+    function caculate() {
+        var weight = parseFloat(document.getElementById("weight").value);
+        var height = parseFloat(document.getElementById("height").value);
+        var bmi = conditionBMI(weight, height);
+        if (!isNaN(bmi)) {
+           document.getElementById("bmiResult").value = classifyBMI(bmi);
+        }
+
+           
+    }
+</script>
+</html>
